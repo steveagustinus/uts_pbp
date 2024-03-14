@@ -1,0 +1,19 @@
+name: Notify pull request
+
+on:
+  pull_request:
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: snow-actions/line-notify@v1.0.0
+        with:
+          access_token: GLwIjWz4uGH8Bnc4YpDNl8JUKSna9hQpbmm38mDpY9O
+          message: |
+            Pull request is ${{ github.event.action }}.
+            ${{ github.event.number }}: ${{ github.event.pull_request.title }}
+            ${{ github.event.pull_request.html_url }}
