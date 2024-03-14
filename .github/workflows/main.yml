@@ -15,5 +15,5 @@ jobs:
           access_token: "123"
           message: |
             Pull request is ${{ github.event.action }}.
-            ${{ github.event.number }}: ${{ github.event.pull_request.title }}
+            #${{ github.event.number }}: ${{ github.event.pull_request.title }}
             ${{ github.event.pull_request.html_url }}
