@@ -4,14 +4,12 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"os"
 	"uts/controllers"
 
 	"github.com/gorilla/mux"
 )
 
 func main() {
-	os.Setenv("token", "GLwIjWz4uGH8Bnc4YpDNl8JUKSna9hQpbmm38mDpY9O")
 	router := mux.NewRouter()
 	router.HandleFunc("/room/get", controllers.GetAllRooms).Methods("GET")
 	router.HandleFunc("/room/getdetail", controllers.GetRoomDetail).Methods("GET")
