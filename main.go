@@ -15,6 +15,8 @@ func main() {
 	router.HandleFunc("/room/getdetail", controllers.GetRoomDetail).Methods("GET")
 	router.HandleFunc("/room/enter", controllers.EnterRoom).Methods("POST")
 	router.HandleFunc("/room/leave", controllers.LeaveRoom).Methods("DELETE")
+	router.HandleFunc("/room1/leave", controllers.LeaveRoom).Methods("DELETE")
+	router.HandleFunc("/room2/leave", controllers.LeaveRoom).Methods("DELETE")
 
 	http.Handle("/", router)
 	fmt.Println("Connected to port 22345")
